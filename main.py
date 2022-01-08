@@ -2,6 +2,7 @@ import bs4
 import requests
 from urllib.parse import urljoin
 import subprocess
+import sys
 baseURL = "https://www.animeworld.tv"
 
 class AnimeRAW:
@@ -45,7 +46,7 @@ def getAllEpisodes(anime):
     print(episodes)
     return episodes
 counter = 0
-animes = findAnime("boku")
+animes = findAnime(sys.argv[1])
 for anim in animes:
     print(f"[{counter}] {anim.name}")
     counter += 1
